@@ -7,7 +7,7 @@ import TextUtils from "../utils/text.js";
 export default class CaptchaService {
 
     /**
-     * @param {redis} redis
+     * @param {RedisClient} redis
      */
     constructor(redis) {
         this.redis = redis
@@ -30,7 +30,7 @@ export default class CaptchaService {
         })
 
         return new Promise((resolve) => {
-            captcha.gmBuffer(captcha.generator(), 'JPEG', function (buffer) {
+            captcha.gmBuffer(captcha.generator(), 'JPEG', (buffer) => {
                 let base64 = buffer.toString('base64')
 
                 this.redis.hmset(text, base64)
