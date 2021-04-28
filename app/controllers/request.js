@@ -20,7 +20,11 @@ export default class RequestController {
 
     createCaptcha(req, res) {
         this.service.createCaptcha().then((result) => {
-            res.send(result)
-        });
+            res.setHeader('Content-Type', 'application/json')
+            res.end(JSON.stringify({
+                success: true,
+                code: result
+            }))
+        })
     }
 }

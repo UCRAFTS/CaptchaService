@@ -12,12 +12,12 @@ export default class App {
     constructor() {
         this.config = dotenv.config()
         this.redis = null
-        // this.redis = redis.createClient({
-        //     'host': process.env.REDIS_HOST,
-        //     'port': process.env.REDIS_PORT,
-        //     'db': process.env.REDIS_DB,
-        //     'password': process.env.REDIS_PASS
-        // });
+        this.redis = redis.createClient({
+            'host': process.env.REDIS_HOST,
+            'port': process.env.REDIS_PORT,
+            'db': process.env.REDIS_DB,
+            'password': process.env.REDIS_PASS
+        });
 
         this.app = express()
         this.app.listen(process.env.APP_PORT)
