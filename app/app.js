@@ -11,7 +11,6 @@ export default class App {
 
     constructor() {
         this.config = dotenv.config()
-        this.redis = null
         this.redis = redis.createClient({
             'host': process.env.REDIS_HOST,
             'port': process.env.REDIS_PORT,
