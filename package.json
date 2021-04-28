@@ -1,0 +1,22 @@
+{
+  "name": "captcha",
+  "version": "1.0.0",
+  "description": "Captcha generator service",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "catpcha",
+    "captcha generator"
+  ],
+  "type": "module",
+  "author": "Alexander Repin / oDD1",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "gm-captcha": "^1.0.2",
+    "redis": "^3.1.2"
+  }
+}
