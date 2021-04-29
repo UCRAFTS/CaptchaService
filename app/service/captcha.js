@@ -33,7 +33,7 @@ export default class CaptchaService {
             captcha.gmBuffer(captcha.generator(), 'JPEG', async (buffer) => {
                 let base64 = buffer.toString('base64')
 
-                await this.redis.hset('captcha', text, base64)
+                await this.redis.hset(text, base64)
                 await this.redis.expire(text, process.env.REDIS_EXPIRE)
 
                 resolve(text)
